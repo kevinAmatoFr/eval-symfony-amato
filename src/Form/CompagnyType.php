@@ -3,8 +3,10 @@
 namespace App\Form;
 
 use App\Entity\Compagny;
+use App\Entity\Customer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class CompagnyType extends AbstractType
@@ -17,7 +19,11 @@ class CompagnyType extends AbstractType
             ->add('adress')
             ->add('zipCode')
             ->add('city')
-            ->add('customer')
+            ->add('customer', EntityType::class, [
+                'class' => Customer::class,
+                'choice_label' => 'firstname',
+                'label' => 'Client'
+            ])
         ;
     }
 

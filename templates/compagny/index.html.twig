@@ -27,8 +27,8 @@
                 <td>{{ compagny.zipCode }}</td>
                 <td>{{ compagny.city }}</td>
                 <td>
-                    <a href="{{ path('compagny_show', {'id': compagny.id}) }}">show</a>
-                    <a href="{{ path('compagny_edit', {'id': compagny.id}) }}">edit</a>
+                    <a type="button" class="btn btn-light" href="{{ path('compagny_show', {'id': compagny.id}) }}">Voir</a>
+                    <a type="button" class="btn btn-secondary" href="{{ path('compagny_edit', {'id': compagny.id}) }}">Editer</a>
                 </td>
             </tr>
         {% else %}
@@ -39,5 +39,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('compagny_new') }}">Create new</a>
+    <a type="button" class="btn btn-success"  href="{{ path('compagny_new') }}">Ajouter</a>
 {% endblock %}
